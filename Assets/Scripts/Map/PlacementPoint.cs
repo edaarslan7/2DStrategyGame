@@ -7,11 +7,6 @@ public class PlacementPoint : MonoBehaviour
 {
 	#region Fields
 	private PlacementPointState state;
-    private Building currentBuilding;
-    #endregion
-
-    #region Props
-    public Building CurrentBuilding { get { return currentBuilding; } set { currentBuilding = value; } }
     #endregion
 
     #region Getters

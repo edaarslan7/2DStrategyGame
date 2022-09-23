@@ -10,6 +10,11 @@ public class BuildingBody : MonoBehaviour
     private Color correctColor;
     private Color wrongColor;
     private Material mainMat;
+    private SpriteRenderer mainRenderer;
+    #endregion
+
+    #region Getters
+    public SpriteRenderer MainRenderer => mainRenderer;
     #endregion
 
     #region Core
@@ -17,7 +22,8 @@ public class BuildingBody : MonoBehaviour
     {
         correctColor = gameplayData.CorrectPlaceColor;
         wrongColor = gameplayData.WorngPlaceColor;
-        mainMat = model.GetComponent<SpriteRenderer>().material;
+        mainRenderer = model.GetComponent<SpriteRenderer>();
+        mainMat = mainRenderer.material;
     }
     #endregion
 

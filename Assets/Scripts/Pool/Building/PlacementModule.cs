@@ -34,15 +34,11 @@ public class PlacementModule : MonoBehaviour
     }
     public void OnClickEnd()
     {
-        place();
+        OnPlaced?.Invoke(building);
     }
     #endregion
 
     #region Executes
-    private void place()
-    {
-        OnPlaced?.Invoke(building);
-    }
     public void ReturnClickPos(Vector3 returnPos)
     {
         transform.position = returnPos;

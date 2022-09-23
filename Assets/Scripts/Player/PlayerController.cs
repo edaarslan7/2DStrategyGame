@@ -8,6 +8,7 @@ public class PlayerController : Controller
     [SerializeField] private InputModule inputModule;
     [SerializeField] private GridModule gridModule;
     private GameObject currentObj;
+    private Building building;
     #endregion
 
     #region Core
@@ -33,7 +34,7 @@ public class PlayerController : Controller
     public void OnClicked(GameObject obj, Vector2 pos)
     {
         currentObj = obj;
-        Building building = currentObj.GetComponent<Building>();
+        building = currentObj.GetComponent<Building>();
         building.OnClick();
     }
     public void OnDragged(Vector2 pos)
@@ -43,7 +44,6 @@ public class PlayerController : Controller
     }
     public void OnClickEnded()
     {
-        Building building = currentObj.GetComponent<Building>();
         Vector2 returnPos = new Vector2(inputModule.ClickPos.x, inputModule.ClickPos.y);
         building.OnClickEnd(returnPos);
         currentObj = null;

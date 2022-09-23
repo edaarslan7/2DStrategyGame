@@ -6,7 +6,11 @@ public class MapController : Controller
 {
 	#region Fields
 	[SerializeField] List<PlacementPoint> placementPoints;
-    #endregion
+	#endregion
+
+	#region Getters
+	public List<PlacementPoint> PlacementPoints => placementPoints;
+	#endregion
 
 	#region Core
 	public override void Initialize(GameplayData data)

@@ -6,13 +6,19 @@ using UnityEngine;
 
 public class Cheat : MonoBehaviour
 {
-    [SerializeField] ObjectPool itemsPool;
-    [SerializeField] ObjectPool buildingPool;
-    [SerializeField] InfiniteScroll scroll;
-    [SerializeField] List<PlacementPoint> placementPoints;
-    List<Transform> items = new List<Transform>();
+    [SerializeField] private ObjectPool itemsPool;
+    [SerializeField] private ObjectPool buildingPool;
+    [SerializeField] private InfiniteScroll scroll;
+    [SerializeField] private MapController mapController;
     [SerializeField] int count;
+    List<Transform> items = new List<Transform>();
     int index = 1;
+    private List<PlacementPoint> placementPoints;
+    private void Start()
+    {
+        placementPoints = mapController.PlacementPoints;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -46,9 +52,6 @@ public class Cheat : MonoBehaviour
             emptyZone.SetState(GameEnums.PlacementPointState.Full);
             Building building = buildingPool.GetItem() as Building;
             building.SetActiveWithPosition(emptyZone.transform.position);
-
-
-            emptyZone.CurrentBuilding = building;
 
             return building;
         }

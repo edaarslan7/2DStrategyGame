@@ -3450,39 +3450,7 @@ MonoBehaviour:
   itemsPool: {fileID: 1221539039}
   buildingPool: {fileID: 974804313}
   scroll: {fileID: 1545326837}
-  placementPoints:
-  - {fileID: 1911461726}
-  - {fileID: 237747337}
-  - {fileID: 560518619}
-  - {fileID: 421545081}
-  - {fileID: 1586273232}
-  - {fileID: 1738347353}
-  - {fileID: 13799035}
-  - {fileID: 746349970}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  mapController: {fileID: 2019130755}
   count: 5
 --- !u!1001 &945135804
 PrefabInstance:
@@ -8362,83 +8330,83 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placementPoints:
-  - {fileID: 1226172306}
-  - {fileID: 1382742594}
-  - {fileID: 1573026976}
-  - {fileID: 901805629}
-  - {fileID: 1669983660}
-  - {fileID: 873264969}
   - {fileID: 1911461726}
-  - {fileID: 617903000}
-  - {fileID: 868972901}
   - {fileID: 237747337}
-  - {fileID: 1371558283}
-  - {fileID: 902061025}
-  - {fileID: 1270169221}
-  - {fileID: 2130139547}
-  - {fileID: 53280894}
-  - {fileID: 304371775}
-  - {fileID: 1390310240}
-  - {fileID: 1302410845}
-  - {fileID: 615674600}
   - {fileID: 560518619}
-  - {fileID: 467773254}
-  - {fileID: 1709830897}
-  - {fileID: 946572067}
-  - {fileID: 318382988}
-  - {fileID: 1265966696}
-  - {fileID: 1150435876}
-  - {fileID: 58631247}
   - {fileID: 421545081}
-  - {fileID: 1375594528}
-  - {fileID: 2123669322}
-  - {fileID: 71157043}
-  - {fileID: 1262929347}
-  - {fileID: 929417320}
-  - {fileID: 59978508}
   - {fileID: 1586273232}
   - {fileID: 1738347353}
-  - {fileID: 1823429253}
-  - {fileID: 642413956}
-  - {fileID: 560645987}
-  - {fileID: 979360710}
-  - {fileID: 1067396250}
-  - {fileID: 1718970810}
-  - {fileID: 2053616985}
-  - {fileID: 396731822}
-  - {fileID: 2048011202}
   - {fileID: 13799035}
-  - {fileID: 2083568786}
-  - {fileID: 1131394728}
-  - {fileID: 946876828}
-  - {fileID: 1073888934}
-  - {fileID: 1135942013}
-  - {fileID: 1144335496}
-  - {fileID: 1370640079}
   - {fileID: 746349970}
-  - {fileID: 814963336}
-  - {fileID: 1169340172}
-  - {fileID: 945135806}
-  - {fileID: 1071911732}
-  - {fileID: 1476826691}
-  - {fileID: 1239029018}
   - {fileID: 1639623467}
-  - {fileID: 1320725719}
-  - {fileID: 952236184}
-  - {fileID: 341595039}
-  - {fileID: 1101081818}
-  - {fileID: 2002287140}
-  - {fileID: 1898244453}
-  - {fileID: 960569610}
   - {fileID: 93409320}
-  - {fileID: 1124354680}
-  - {fileID: 2118210402}
-  - {fileID: 951374598}
-  - {fileID: 840619173}
-  - {fileID: 1799263424}
-  - {fileID: 466223547}
   - {fileID: 1355337006}
+  - {fileID: 1382742594}
+  - {fileID: 902061025}
+  - {fileID: 467773254}
+  - {fileID: 1265966696}
+  - {fileID: 929417320}
+  - {fileID: 1067396250}
+  - {fileID: 2048011202}
+  - {fileID: 1370640079}
+  - {fileID: 1071911732}
+  - {fileID: 341595039}
+  - {fileID: 466223547}
+  - {fileID: 1669983660}
+  - {fileID: 868972901}
+  - {fileID: 1390310240}
+  - {fileID: 1150435876}
+  - {fileID: 1262929347}
+  - {fileID: 1718970810}
+  - {fileID: 2083568786}
+  - {fileID: 1144335496}
+  - {fileID: 1476826691}
+  - {fileID: 1898244453}
+  - {fileID: 1799263424}
+  - {fileID: 1226172306}
+  - {fileID: 1371558283}
+  - {fileID: 304371775}
+  - {fileID: 58631247}
+  - {fileID: 71157043}
+  - {fileID: 560645987}
+  - {fileID: 2053616985}
+  - {fileID: 1169340172}
+  - {fileID: 1320725719}
+  - {fileID: 2002287140}
+  - {fileID: 840619173}
+  - {fileID: 1573026976}
+  - {fileID: 2130139547}
+  - {fileID: 53280894}
+  - {fileID: 318382988}
+  - {fileID: 1375594528}
+  - {fileID: 1823429253}
+  - {fileID: 946876828}
+  - {fileID: 814963336}
+  - {fileID: 945135806}
+  - {fileID: 1124354680}
+  - {fileID: 951374598}
+  - {fileID: 901805629}
+  - {fileID: 617903000}
+  - {fileID: 1302410845}
+  - {fileID: 1709830897}
+  - {fileID: 59978508}
+  - {fileID: 642413956}
+  - {fileID: 396731822}
+  - {fileID: 1073888934}
+  - {fileID: 952236184}
+  - {fileID: 1101081818}
   - {fileID: 1705623999}
+  - {fileID: 873264969}
+  - {fileID: 1270169221}
+  - {fileID: 615674600}
+  - {fileID: 946572067}
+  - {fileID: 2123669322}
+  - {fileID: 979360710}
+  - {fileID: 1131394728}
+  - {fileID: 1135942013}
+  - {fileID: 1239029018}
+  - {fileID: 960569610}
+  - {fileID: 2118210402}
 --- !u!1001 &2048011200
 PrefabInstance:
   m_ObjectHideFlags: 0

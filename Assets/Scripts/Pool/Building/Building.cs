@@ -44,6 +44,8 @@ public class Building : SpawnableObject
         placementModule.OnClick();
 
         setPlacementPoints(true);
+
+        body.MainRenderer.sortingOrder = 99;
     }
     public void OnClickEnd(Vector3 returnPos)
     {
@@ -56,6 +58,9 @@ public class Building : SpawnableObject
         {
             placementModule.ReturnClickPos(returnPos);
         }
+
+        body.MainRenderer.sortingOrder = 0;
+
     }
     #endregion
 
@@ -99,6 +104,7 @@ public class Building : SpawnableObject
     #region Physics
     private void OnTriggerEnter2D(Collider2D other)
     {
+        print(other.name);
         if(other.gameObject.CompareTag(CONSTANTS.placementPointTag))
         {
             addNewPlacementPoint(other.GetComponent<PlacementPoint>());
