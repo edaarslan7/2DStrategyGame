@@ -37,9 +37,9 @@ public class MapController : Controller
         if (any)
         {
             PlacementPoint emptyZone = placementPoints.First(x => x.State == GameEnums.PlacementPointState.Empty);
-            emptyZone.SetState(GameEnums.PlacementPointState.Full);
             Building building = buildingPool.GetItem() as Building;
             building.SetActiveWithPosition(emptyZone.transform.position);
+            emptyZone.SetState(GameEnums.PlacementPointState.Full);
 
             return building;
         }

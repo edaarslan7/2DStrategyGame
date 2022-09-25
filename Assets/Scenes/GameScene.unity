@@ -204,6 +204,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468629092}
     m_Modifications:
+    - target: {fileID: 467868469473778415, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4084249891534607928, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
       propertyPath: m_Name
       value: PlacementPoint (6)
@@ -680,6 +684,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468629092}
     m_Modifications:
+    - target: {fileID: 467868469473778415, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4084249891534607928, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
       propertyPath: m_Name
       value: PlacementPoint (9)
@@ -1057,6 +1065,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468629092}
     m_Modifications:
+    - target: {fileID: 467868469473778415, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4084249891534607928, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
       propertyPath: m_Name
       value: PlacementPoint (1)
@@ -1671,6 +1683,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468629092}
     m_Modifications:
+    - target: {fileID: 467868469473778415, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4084249891534607928, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
       propertyPath: m_Name
       value: PlacementPoint (3)
@@ -1832,7 +1848,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2301,6 +2317,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468629092}
     m_Modifications:
+    - target: {fileID: 467868469473778415, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4084249891534607928, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
       propertyPath: m_Name
       value: PlacementPoint (2)
@@ -2821,6 +2841,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468629092}
     m_Modifications:
+    - target: {fileID: 467868469473778415, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4084249891534607928, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
       propertyPath: m_Name
       value: PlacementPoint (7)
@@ -6125,6 +6149,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468629092}
     m_Modifications:
+    - target: {fileID: 467868469473778415, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4084249891534607928, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
       propertyPath: m_Name
       value: PlacementPoint (10)
@@ -7043,6 +7071,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468629092}
     m_Modifications:
+    - target: {fileID: 467868469473778415, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4084249891534607928, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
       propertyPath: m_Name
       value: PlacementPoint (4)
@@ -7116,6 +7148,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468629092}
     m_Modifications:
+    - target: {fileID: 467868469473778415, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4084249891534607928, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
       propertyPath: m_Name
       value: PlacementPoint (8)
@@ -7607,6 +7643,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468629092}
     m_Modifications:
+    - target: {fileID: 467868469473778415, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4084249891534607928, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
       propertyPath: m_Name
       value: PlacementPoint (5)
@@ -8155,6 +8195,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468629092}
     m_Modifications:
+    - target: {fileID: 467868469473778415, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708551908959271304, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708551908959271304, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708551908959271304, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4084249891534607928, guid: 922e22131e6d05d4380f1ec86a296ec3, type: 3}
       propertyPath: m_Name
       value: PlacementPoint

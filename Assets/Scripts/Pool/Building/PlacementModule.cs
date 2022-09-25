@@ -35,6 +35,7 @@ public class PlacementModule : MonoBehaviour
     public void OnClickEnd()
     {
         OnPlaced?.Invoke(building);
+        body.ResetColor();
     }
     #endregion
 

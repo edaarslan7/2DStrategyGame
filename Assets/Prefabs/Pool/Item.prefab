@@ -126,7 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 219399119786296588}
-  button: {fileID: 2376364832084159860}
 --- !u!114 &2376364832084159860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,7 +172,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3674242121408544867}
         m_TargetAssemblyTypeName: ScrollViewItem, Assembly-CSharp
-        m_MethodName: OnClick
+        m_MethodName: OnItemClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

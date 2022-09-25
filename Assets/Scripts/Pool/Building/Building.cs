@@ -11,12 +11,12 @@ public class Building : SpawnableObject
     [Header("Modules")]
     [SerializeField] private PlacementModule placementModule;
     private List<PlacementPoint> placementPoints;
-    private StructureType type;
     #endregion
 
     #region Getters
     public PlacementModule PlacementModule => placementModule;
     public List<PlacementPoint> PlacementPoints => placementPoints;
+    public BuildingBody BuildingBody => body;
     #endregion
 
     #region Core
@@ -28,6 +28,7 @@ public class Building : SpawnableObject
     public override void SetActiveWithPosition(Vector2 pos)
     {
         base.SetActiveWithPosition(pos);
+        body.ResetColor();
         placementPoints = new List<PlacementPoint>();
         placementModule.Initialize(this, body);
     }
@@ -53,6 +54,8 @@ public class Building : SpawnableObject
         setPlacementPoints(true);
 
         body.MainRenderer.sortingOrder = 99;
+
+        OnItemClick();
     }
     public void OnClickEnd(Vector3 returnPos)
     {
@@ -123,6 +126,14 @@ public class Building : SpawnableObject
         {
             removePlacementPoint(other.GetComponent<PlacementPoint>());
         }
+    }
+    #endregion
+
+    #region Executes
+    public override void OnItemClick()
+    {
+        base.OnItemClick();
+        information.SetInformationData(type.ToString(), body.MainRenderer.sprite, type, false); ;
     }
     #endregion
 }

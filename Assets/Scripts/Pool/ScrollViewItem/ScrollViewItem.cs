@@ -9,24 +9,12 @@ public class ScrollViewItem : SpawnableObject
 {
     #region Fields
     [SerializeField] private Image image;
-    private string structureName;
-    private StructureType type;
-    private InformationController information;
     #endregion
 
     #region Core
-    public override void SetActive()
+    protected override void setStructureData()
     {
-        base.SetActive();
-        setStructureData();
-        information = FindObjectOfType<InformationController>();
-    }
-    private void setStructureData()
-    {
-        int randomType = Rnd.Range(0, CONSTANTS.COUNT);
-        type = (StructureType)randomType;
-        structureName = type.ToString();
-
+        base.setStructureData();
         int randomStructureImage;
 
         switch (randomType)
@@ -47,10 +35,12 @@ public class ScrollViewItem : SpawnableObject
     }
     #endregion
 
-    #region Execute
-    public void OnClick()
+    #region Executes
+    public override void OnItemClick()
     {
-        information.SetInformationData(structureName, image.sprite, type, this);
+        base.OnItemClick();
+        information.SetInformationData(type.ToString(), image.sprite, type, true); ;
+        information.SetScrollViewItem(this);
     }
     #endregion
 }

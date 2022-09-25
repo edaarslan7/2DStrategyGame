@@ -22,6 +22,7 @@ public class BuildingBody : MonoBehaviour
         correctColor = gameplayData.CorrectPlaceColor;
         wrongColor = gameplayData.WorngPlaceColor;
         mainMat = mainRenderer.material;
+        MainRenderer.sortingOrder = 99;
     }
     #endregion
 

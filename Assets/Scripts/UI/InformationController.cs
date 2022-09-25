@@ -18,6 +18,7 @@ public class InformationController : Controller
     [SerializeField] private MapController mapController;
     private StructureType structureType;
     private ScrollViewItem item;
+    private bool buttonInteractable;
     #endregion
 
     #region Core
@@ -34,10 +35,15 @@ public class InformationController : Controller
 
     #endregion
 
-    #region Executes
-    public void SetInformationData(string name, Sprite image, StructureType type, ScrollViewItem item)
+    public void SetScrollViewItem(ScrollViewItem item)
     {
         this.item = item;
+    }
+
+    #region Executes
+    public void SetInformationData(string name, Sprite image, StructureType type, bool buttonInteractable)
+    {
+        this.buttonInteractable = buttonInteractable;
         if (!structure.activeInHierarchy) structure.SetActive(true);
         itemName.text = name;
         itemImage.sprite = image;
@@ -56,9 +62,13 @@ public class InformationController : Controller
 
     public void OnClick()
     {
-        Building building = mapController.SpawnBuilding();
-        building.SetBuildingData(itemImage.sprite, structureType);
-        item.Dismiss();
+        if (buttonInteractable)
+        {
+            Building building = mapController.SpawnBuilding();
+            building.SetBuildingData(itemImage.sprite, structureType);
+            item.Dismiss();
+            buttonInteractable = false;
+        }
     }
     #endregion
 
