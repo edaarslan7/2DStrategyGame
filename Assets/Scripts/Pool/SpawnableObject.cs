@@ -7,6 +7,7 @@ public class SpawnableObject : MonoBehaviour
     #region Fields
     private bool isInUse;
     protected GameplayData data;
+    public Transform defaultParent;
     #endregion
 
     #region Getters
@@ -16,6 +17,7 @@ public class SpawnableObject : MonoBehaviour
     #region Core
     public virtual void Initialize(GameplayData data)
     {
+        defaultParent = transform.parent;
         Dismiss();
         this.data = data;
     }
@@ -34,6 +36,7 @@ public class SpawnableObject : MonoBehaviour
     {
         isInUse = false;
         gameObject.SetActive(false);
+        transform.SetParent(defaultParent);
     }
     #endregion
 }

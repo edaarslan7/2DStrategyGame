@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static GameEnums;
 
 public class Building : SpawnableObject
 {
@@ -10,6 +11,7 @@ public class Building : SpawnableObject
     [Header("Modules")]
     [SerializeField] private PlacementModule placementModule;
     private List<PlacementPoint> placementPoints;
+    private StructureType type;
     #endregion
 
     #region Getters
@@ -33,6 +35,11 @@ public class Building : SpawnableObject
     {
         base.Dismiss();
         placementModule.CanPlace = false;
+    }
+    public void SetBuildingData(Sprite image, StructureType type)
+    {
+        body.MainRenderer.sprite = image;
+        this.type = type;
     }
     #endregion
 
@@ -104,8 +111,7 @@ public class Building : SpawnableObject
     #region Physics
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print(other.name);
-        if(other.gameObject.CompareTag(CONSTANTS.placementPointTag))
+        if (other.gameObject.CompareTag(CONSTANTS.placementPointTag))
         {
             addNewPlacementPoint(other.GetComponent<PlacementPoint>());
         }

@@ -11,6 +11,7 @@ public class ScrollViewItem : SpawnableObject
     [SerializeField] private Image image;
     private string structureName;
     private StructureType type;
+    private InformationController information;
     #endregion
 
     #region Core
@@ -18,6 +19,7 @@ public class ScrollViewItem : SpawnableObject
     {
         base.SetActive();
         setStructureData();
+        information = FindObjectOfType<InformationController>();
     }
     private void setStructureData()
     {
@@ -48,6 +50,7 @@ public class ScrollViewItem : SpawnableObject
     #region Execute
     public void OnClick()
     {
+        information.SetInformationData(structureName, image.sprite, type, this);
     }
     #endregion
 }

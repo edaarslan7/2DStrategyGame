@@ -15,21 +15,11 @@ MonoBehaviour:
   correctPlaceColor: {r: 0, g: 1, b: 0.3137255, a: 1}
   worngPlaceColor: {r: 1, g: 0, b: 0, a: 0}
   buildings:
-  - {fileID: 8559524960937084438, guid: 7f23c43e990a2c0419011b430d0dc358, type: 3}
-  - {fileID: -1750278944231200964, guid: 7f23c43e990a2c0419011b430d0dc358, type: 3}
-  - {fileID: -936540824011448932, guid: 7f23c43e990a2c0419011b430d0dc358, type: 3}
-  - {fileID: 5189850879843580409, guid: 7f23c43e990a2c0419011b430d0dc358, type: 3}
-  - {fileID: 1187112987534059364, guid: 7f23c43e990a2c0419011b430d0dc358, type: 3}
-  - {fileID: -11175925575501454, guid: 7f23c43e990a2c0419011b430d0dc358, type: 3}
-  - {fileID: -9215789942305759742, guid: 7f23c43e990a2c0419011b430d0dc358, type: 3}
-  - {fileID: -3900733078648749615, guid: 7f23c43e990a2c0419011b430d0dc358, type: 3}
-  - {fileID: -7034380830887825588, guid: 7f23c43e990a2c0419011b430d0dc358, type: 3}
-  - {fileID: 4846632265823223142, guid: 7f23c43e990a2c0419011b430d0dc358, type: 3}
-  - {fileID: -3085842354376123738, guid: 7f23c43e990a2c0419011b430d0dc358, type: 3}
-  - {fileID: 5506684904368456951, guid: 7f23c43e990a2c0419011b430d0dc358, type: 3}
-  - {fileID: 8283250101983758285, guid: 7f23c43e990a2c0419011b430d0dc358, type: 3}
-  - {fileID: -356666596908691038, guid: 7f23c43e990a2c0419011b430d0dc358, type: 3}
-  - {fileID: 2897237729218166361, guid: 7f23c43e990a2c0419011b430d0dc358, type: 3}
+  - {fileID: 21300000, guid: 25878040c509ece47aa383f412749de1, type: 3}
+  - {fileID: 21300000, guid: 18d667e16844a924c803db0e2649a9f0, type: 3}
+  - {fileID: 21300000, guid: 32d93e3ff4a677b4693fe96d8d063860, type: 3}
+  - {fileID: 21300000, guid: 4c0706f16615e3d409bee6658209e69a, type: 3}
+  - {fileID: 21300000, guid: d3c6b44fbcd76fc4abfc3efa11cef46c, type: 3}
   powerPlants:
   - {fileID: 21300000, guid: 0cec2be9470c7934fab0b71f99adaab6, type: 3}
   - {fileID: 21300000, guid: 0ab157ac554060a478b71226fb4c5a6f, type: 3}

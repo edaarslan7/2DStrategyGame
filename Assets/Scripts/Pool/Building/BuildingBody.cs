@@ -6,11 +6,10 @@ using UnityEngine.Diagnostics;
 public class BuildingBody : MonoBehaviour
 {
     #region Fields
-    [SerializeField] private GameObject model;
+    [SerializeField] private SpriteRenderer mainRenderer;
     private Color correctColor;
     private Color wrongColor;
     private Material mainMat;
-    private SpriteRenderer mainRenderer;
     #endregion
 
     #region Getters
@@ -22,7 +21,6 @@ public class BuildingBody : MonoBehaviour
     {
         correctColor = gameplayData.CorrectPlaceColor;
         wrongColor = gameplayData.WorngPlaceColor;
-        mainRenderer = model.GetComponent<SpriteRenderer>();
         mainMat = mainRenderer.material;
     }
     #endregion
