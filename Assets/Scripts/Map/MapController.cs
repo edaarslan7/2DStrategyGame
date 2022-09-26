@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class MapController : Controller
 {
-	#region Fields
+    #region Fields
+    [SerializeField] private GameObject placementPointsParent;
 	[SerializeField] List<PlacementPoint> placementPoints;
     [SerializeField] ObjectPool buildingPool;
     #endregion
@@ -24,9 +25,13 @@ public class MapController : Controller
 	}
 	public override void StartGame()
 	{
-	}
+        placementPointsParent.SetActive(true);
+
+    }
     public override void GameOver()
     {
+        placementPointsParent.SetActive(false);
+
     }
     #endregion
 
