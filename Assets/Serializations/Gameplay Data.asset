@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gameplay Data
   m_EditorClassIdentifier: 
   correctPlaceColor: {r: 0, g: 1, b: 0.3137255, a: 1}
-  worngPlaceColor: {r: 1, g: 0, b: 0, a: 0}
+  worngPlaceColor: {r: 1, g: 0, b: 0, a: 1}
   buildings:
   - {fileID: 21300000, guid: 25878040c509ece47aa383f412749de1, type: 3}
   - {fileID: 21300000, guid: 18d667e16844a924c803db0e2649a9f0, type: 3}

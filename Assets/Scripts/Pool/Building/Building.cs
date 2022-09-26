@@ -31,6 +31,7 @@ public class Building : SpawnableObject
         body.ResetColor();
         placementPoints = new List<PlacementPoint>();
         placementModule.Initialize(this, body);
+        placementModule.IsPlaced = true;
     }
     public override void Dismiss()
     {
@@ -117,6 +118,7 @@ public class Building : SpawnableObject
         if (other.gameObject.CompareTag(CONSTANTS.placementPointTag))
         {
             addNewPlacementPoint(other.GetComponent<PlacementPoint>());
+            if (placementModule.IsPlaced) body.ResetColor();
         }
     }
 

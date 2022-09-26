@@ -42,6 +42,7 @@ public class PlacementModule : MonoBehaviour
     #region Executes
     public void ReturnClickPos(Vector3 returnPos)
     {
+        isPlaced = true;
         transform.position = returnPos;
         body.ResetColor();
     }
