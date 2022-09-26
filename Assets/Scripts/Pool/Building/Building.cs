@@ -23,7 +23,6 @@ public class Building : SpawnableObject
     public override void Initialize(GameplayData data)
     {
         base.Initialize(data);
-        body.Initialize(data);
     }
     public override void SetActiveWithPosition(Vector2 pos)
     {
@@ -40,8 +39,10 @@ public class Building : SpawnableObject
     }
     public void SetBuildingData(Sprite image, StructureType type)
     {
-        body.MainRenderer.sprite = image;
         this.type = type;
+        body.Initialize(data, type);
+        body.MainRenderer.sprite = image;
+
     }
     #endregion
 
@@ -58,17 +59,17 @@ public class Building : SpawnableObject
 
         OnItemClick();
     }
-    public void OnClickEnd(Vector3 returnPos)
+    public void OnClickEnd(Vector2 returnPos)
     {
         if (placementModule.CanPlace)
         {
             placementModule.OnClickEnd();
-            setPlacementPoints(false);
         }
         else
         {
             placementModule.ReturnClickPos(returnPos);
         }
+        setPlacementPoints(false);
 
         body.MainRenderer.sortingOrder = 0;
 
@@ -92,6 +93,7 @@ public class Building : SpawnableObject
     }
     private void setPlacementPoints(bool isEmpty)
     {
+        print(isEmpty);
         if (placementPoints.Count > 0)
         {
             for (int i = 0; i < placementPoints.Count; i++)
@@ -118,7 +120,11 @@ public class Building : SpawnableObject
         if (other.gameObject.CompareTag(CONSTANTS.placementPointTag))
         {
             addNewPlacementPoint(other.GetComponent<PlacementPoint>());
-            if (placementModule.IsPlaced) body.ResetColor();
+            if (placementModule.IsPlaced)
+            {
+                setPlacementPoints(false);
+                body.ResetColor();
+            }
         }
     }
 

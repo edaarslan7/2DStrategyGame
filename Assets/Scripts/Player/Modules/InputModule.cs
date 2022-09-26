@@ -10,6 +10,7 @@ public class InputModule : MonoBehaviour
     public Action<Vector2> OnDragged;
     public Action OnClickEnded;
     [SerializeField] private LayerMask layer;
+    [SerializeField] private float dragThreshold = 1f;
     private Vector2 currentPos;
     private Vector2 clickPos;
     private GameObject obj;
@@ -59,8 +60,8 @@ public class InputModule : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity, layer);
         if (hit.collider != null)
         {
-            clickPos = new Vector2(hit.collider.transform.position.x, hit.collider.transform.position.y);
-            obj = hit.collider.transform.parent.gameObject;
+            obj = hit.collider.transform.parent.parent.gameObject;
+            clickPos = new Vector2(obj.transform.position.x, obj.transform.position.y);
             OnClicked?.Invoke(obj, clickPos);
 
             //Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.green);
@@ -76,7 +77,9 @@ public class InputModule : MonoBehaviour
         if (obj != null)
         {
             currentPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            OnDragged?.Invoke(new Vector2(currentPos.x, currentPos.y));
+            float dragValue = Vector2.SqrMagnitude(new Vector2(clickPos.x, clickPos.y) - currentPos);
+            if (dragValue > dragThreshold)
+                OnDragged?.Invoke(new Vector2(currentPos.x, currentPos.y));
         }
     }
 

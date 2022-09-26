@@ -64,8 +64,7 @@ public class InformationController : Controller
     {
         if (buttonInteractable)
         {
-            Building building = mapController.SpawnBuilding();
-            building.SetBuildingData(itemImage.sprite, structureType);
+            Building building = mapController.SpawnBuilding(structureType, itemImage.sprite);
             item.Dismiss();
             buttonInteractable = false;
         }

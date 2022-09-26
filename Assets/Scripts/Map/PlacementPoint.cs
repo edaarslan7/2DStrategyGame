@@ -6,7 +6,7 @@ using static GameEnums;
 public class PlacementPoint : MonoBehaviour
 {
 	#region Fields
-	private PlacementPointState state;
+	[SerializeField]private PlacementPointState state;
     #endregion
 
     #region Getters
@@ -16,7 +16,6 @@ public class PlacementPoint : MonoBehaviour
 	#region Core
 	public void Initialize()
 	{
-		state = PlacementPointState.Empty;
 	}
 	#endregion
 

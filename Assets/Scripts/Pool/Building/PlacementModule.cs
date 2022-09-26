@@ -40,10 +40,11 @@ public class PlacementModule : MonoBehaviour
     #endregion
 
     #region Executes
-    public void ReturnClickPos(Vector3 returnPos)
+    public void ReturnClickPos(Vector2 returnPos)
     {
         isPlaced = true;
         transform.position = returnPos;
+        OnPlaced?.Invoke(building);
         body.ResetColor();
     }
     #endregion
@@ -55,9 +56,11 @@ public class PlacementModule : MonoBehaviour
         {
             if (building.PlacementPoints.All(x => x.State == GameEnums.PlacementPointState.Empty))
                 CanPlace = true;
+            else
+                CanPlace = false;
         }
         else
-            CanPlace = false;
+             CanPlace = false;
 
         body.ColorChangings(CanPlace);
     }

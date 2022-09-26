@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
+using static GameEnums;
 
 public class MapController : Controller
 {
@@ -36,13 +38,14 @@ public class MapController : Controller
     #endregion
 
     #region Executes
-    public Building SpawnBuilding()
+    public Building SpawnBuilding(StructureType type, Sprite itemImage)
     {
         bool any = placementPoints.Any(x => x.State == GameEnums.PlacementPointState.Empty);
         if (any)
         {
             PlacementPoint emptyZone = placementPoints.First(x => x.State == GameEnums.PlacementPointState.Empty);
             Building building = buildingPool.GetItem() as Building;
+            building.SetBuildingData(itemImage, type);
             building.SetActiveWithPosition(emptyZone.transform.position);
             emptyZone.SetState(GameEnums.PlacementPointState.Full);
 
