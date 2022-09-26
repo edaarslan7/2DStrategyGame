@@ -28,9 +28,6 @@ public class InfiniteScroll : MonoBehaviour
 
     #endregion
 
-    public List<RectTransform> Items=>items;
-
-
     #region Core
     public void Initialize()
     {
@@ -144,9 +141,7 @@ public class InfiniteScroll : MonoBehaviour
                 }
                 for (int i = scrollRect.content.childCount - 1; i >= 0; i--)
                 {
-                    Transform child = scrollRect.content.GetChild(i);
-                    child.SetParent(null);
-                    GameObject.DestroyImmediate(child.gameObject);
+                    RemoveChild(i);
                 }
             }
 
@@ -157,6 +152,14 @@ public class InfiniteScroll : MonoBehaviour
 
             setItems();
         }
+    }
+
+    public void RemoveChild(int index)
+    {
+        Transform child = scrollRect.content.GetChild(index);
+        child.SetParent(null);
+        child.GetComponent<ScrollViewItem>().Dismiss();
+        itemCount = scrollRect.content.childCount;
     }
     #endregion
 

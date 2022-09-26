@@ -10,9 +10,12 @@ public class SpawnableObject : MonoBehaviour
     private Transform defaultParent;
     private bool isInUse;
     protected StructureType type;
-    protected int randomType;
     protected GameplayData data;
     protected InformationController information;
+    #endregion
+
+    #region Props
+    public StructureType Type { get { return type; } set { type = value; } }
     #endregion
 
     #region Getters
@@ -30,7 +33,6 @@ public class SpawnableObject : MonoBehaviour
     public virtual void SetActive()
     {
         isInUse = true;
-        setStructureData();
         gameObject.SetActive(true);
     }
     public virtual void SetActiveWithPosition(Vector2 pos)
@@ -44,12 +46,6 @@ public class SpawnableObject : MonoBehaviour
         isInUse = false;
         gameObject.SetActive(false);
         transform.SetParent(defaultParent);
-    }
-    protected virtual void setStructureData()
-    {
-        randomType = Random.Range(0, CONSTANTS.COUNT);
-        type = (StructureType)randomType;
-        
     }
     #endregion
 

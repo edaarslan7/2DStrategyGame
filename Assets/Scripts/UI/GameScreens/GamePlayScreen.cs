@@ -8,6 +8,7 @@ public class GamePlayScreen : GameScreen
 {
     #region Fields
     [SerializeField] private InfiniteScroll scroll;
+    [SerializeField] private ScrollViewItemController scrollItemController;
     #endregion
 
     #region Core
@@ -15,13 +16,12 @@ public class GamePlayScreen : GameScreen
     {
         base.Show();
         scroll.Initialize();
+        scrollItemController.SetItems();
     }
     #endregion
 
-    #region Execute
-    public void OnClick()
+    private void setItems()
     {
-        
+
     }
-    #endregion
 }

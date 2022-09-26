@@ -11,28 +11,33 @@ public class ScrollViewItem : SpawnableObject
     [SerializeField] private Image image;
     #endregion
 
-    #region Core
-    protected override void setStructureData()
-    {
-        base.setStructureData();
-        int randomStructureImage;
+    #region Props
+    public Image Image { get { return image; } set { image = value; } }
 
-        switch (randomType)
-        {
-            case 0:
-                randomStructureImage = Rnd.Range(0, data.Buildings.Count);
-                image.sprite = data.Buildings[randomStructureImage];
-                break;
-            case 1:
-                randomStructureImage = Rnd.Range(0, data.PowerPlants.Count);
-                image.sprite = data.PowerPlants[randomStructureImage];
-                break;
-            case 2:
-                randomStructureImage = Rnd.Range(0, data.Barracks.Count);
-                image.sprite = data.Barracks[randomStructureImage];
-                break;
-        }
-    }
+    #endregion
+
+    #region Core
+    //protected override void setStructureData()
+    //{
+    //    base.setStructureData();
+    //    int randomStructureImage;
+
+    //    switch (randomType)
+    //    {
+    //        case 0:
+    //            randomStructureImage = Rnd.Range(0, data.Buildings.Count);
+    //            image.sprite = data.Buildings[randomStructureImage];
+    //            break;
+    //        case 1:
+    //            randomStructureImage = Rnd.Range(0, data.PowerPlants.Count);
+    //            image.sprite = data.PowerPlants[randomStructureImage];
+    //            break;
+    //        case 2:
+    //            randomStructureImage = Rnd.Range(0, data.Barracks.Count);
+    //            image.sprite = data.Barracks[randomStructureImage];
+    //            break;
+    //    }
+    //}
     #endregion
 
     #region Executes

@@ -16,6 +16,7 @@ public class InformationController : Controller
     [SerializeField] private GameObject structure;
     [Space]
     [SerializeField] private MapController mapController;
+    [SerializeField] private InfiniteScroll scroll;
     private StructureType structureType;
     private ScrollViewItem item;
     private bool buttonInteractable;
@@ -65,8 +66,6 @@ public class InformationController : Controller
         if (buttonInteractable)
         {
             Building building = mapController.SpawnBuilding(structureType, itemImage.sprite);
-            item.Dismiss();
-            buttonInteractable = false;
         }
     }
     #endregion

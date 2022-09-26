@@ -93,7 +93,6 @@ public class Building : SpawnableObject
     }
     private void setPlacementPoints(bool isEmpty)
     {
-        print(isEmpty);
         if (placementPoints.Count > 0)
         {
             for (int i = 0; i < placementPoints.Count; i++)
