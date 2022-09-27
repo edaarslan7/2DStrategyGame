@@ -9,24 +9,26 @@ public class MapController : Controller
 {
     #region Fields
     [SerializeField] private GameObject placementPointsParent;
-	[SerializeField] List<PlacementPoint> placementPoints;
-    [SerializeField] ObjectPool buildingPool;
+    [SerializeField] private List<PlacementPoint> placementPoints;
+    [SerializeField] private ObjectPool buildingPool;
+    [SerializeField] private float distThreshold = 1f;
+    private Building building;
     #endregion
 
     #region Getters
     public List<PlacementPoint> PlacementPoints => placementPoints;
-	#endregion
+    #endregion
 
-	#region Core
-	public override void Initialize(GameplayData data)
-	{
-		for (int i = 0; i < placementPoints.Count; i++)
-		{
-			placementPoints[i].Initialize();
-		}
-	}
-	public override void StartGame()
-	{
+    #region Core
+    public override void Initialize(GameplayData data)
+    {
+        for (int i = 0; i < placementPoints.Count; i++)
+        {
+            placementPoints[i].Initialize();
+        }
+    }
+    public override void StartGame()
+    {
         placementPointsParent.SetActive(true);
 
     }
@@ -38,23 +40,62 @@ public class MapController : Controller
     #endregion
 
     #region Executes
-    public Building SpawnBuilding(StructureType type, Sprite itemImage)
+    public PlacementPoint GetNearestPoint()
     {
-        bool any = placementPoints.Any(x => x.State == GameEnums.PlacementPointState.Empty);
-        if (any)
+        PlacementPoint nearestPoint = null;
+        float nearestDistance = .5f;
+        foreach (PlacementPoint point in placementPoints)
         {
-            PlacementPoint emptyZone = placementPoints.First(x => x.State == GameEnums.PlacementPointState.Empty);
-            Building building = buildingPool.GetItem() as Building;
-            building.SetBuildingData(itemImage, type);
-            building.SetActiveWithPosition(emptyZone.transform.position);
-            emptyZone.SetState(GameEnums.PlacementPointState.Full);
+            print(point.name + " " + point.State);
+            if (point.State == PlacementPointState.Empty)
+            {
+                float dist = Vector2.Distance(point.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                if (dist < nearestDistance)
+                {
+                    nearestPoint = point;
+                    nearestDistance = dist;
+                }
+            }
+        }
+        return nearestPoint;
+    }
 
-            return building;
+    public void SpawnBuilding(StructureType type, Sprite itemImage, PlacementPoint point)
+    {
+        bool a = point.State == PlacementPointState.Empty;
+        //print(a + " " + point.State + " " + point);
+        if (point.State == PlacementPointState.Empty)
+        {
+            point.SetState(PlacementPointState.Full);
+            building = buildingPool.GetItem() as Building;
+            building.SetBuildingData(itemImage, type);
+            building.SetActiveWithPosition(point.transform.position);
         }
         else
         {
-            return null;
         }
     }
     #endregion
+
+
+
+
+    //public Building SpawnBuilding(StructureType type, Sprite itemImage)
+    //{
+    //    bool any = placementPoints.Any(x => x.State == GameEnums.PlacementPointState.Empty);
+    //    if (any)
+    //    {
+    //        PlacementPoint emptyZone = placementPoints.First(x => x.State == GameEnums.PlacementPointState.Empty);
+    //        Building building = buildingPool.GetItem() as Building;
+    //        building.SetBuildingData(itemImage, type);
+    //        building.SetActiveWithPosition(emptyZone.transform.position);
+    //        emptyZone.SetState(GameEnums.PlacementPointState.Full);
+
+    //        return building;
+    //    }
+    //    else
+    //    {
+    //        return null;
+    //    }
+    //}
 }

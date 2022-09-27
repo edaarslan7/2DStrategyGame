@@ -100,6 +100,7 @@ public class Building : SpawnableObject
                 PlacementPoint point = placementPoints[i].GetComponent<PlacementPoint>();
                 if (isEmpty)
                 {
+
                     point.SetState(GameEnums.PlacementPointState.Empty);
                     placementModule.IsPlaced = false;
                 }

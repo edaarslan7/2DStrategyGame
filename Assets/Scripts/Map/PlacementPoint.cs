@@ -16,6 +16,7 @@ public class PlacementPoint : MonoBehaviour
 	#region Core
 	public void Initialize()
 	{
+		//state = PlacementPointState.Empty;
 	}
 	#endregion
 

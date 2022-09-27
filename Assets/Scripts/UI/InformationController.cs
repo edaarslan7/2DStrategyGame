@@ -17,6 +17,7 @@ public class InformationController : Controller
     [Space]
     [SerializeField] private MapController mapController;
     [SerializeField] private InfiniteScroll scroll;
+    [SerializeField] private ItemPlaceHelper itemPlaceHelper;
     private StructureType structureType;
     private ScrollViewItem item;
     private bool buttonInteractable;
@@ -25,6 +26,7 @@ public class InformationController : Controller
     #region Core
     public override void Initialize(GameplayData data)
     {
+        itemPlaceHelper.Initialize();
     }
 
     public override void StartGame()
@@ -61,13 +63,14 @@ public class InformationController : Controller
         }
     }
 
-    public void OnClick()
+    public void OnClick(Building building)
     {
         if (buttonInteractable)
         {
-            Building building = mapController.SpawnBuilding(structureType, itemImage.sprite);
+            //Building building = mapController.SpawnBuilding(structureType, itemImage.sprite);
+            itemPlaceHelper.SetItemData(itemImage.sprite, structureType);
+            itemPlaceHelper.SetModel(true);
         }
     }
     #endregion
-
 }
