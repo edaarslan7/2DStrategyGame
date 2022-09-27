@@ -9,6 +9,7 @@ public class InputModule : MonoBehaviour
     public Action<GameObject, Vector2> OnClicked;
     public Action<Vector2> OnDragged;
     public Action OnClickEnded;
+    [SerializeField] private GameObject itemplace;
     [SerializeField] private LayerMask layer;
     [SerializeField] private float dragThreshold = 1f;
     private Vector2 currentPos;
@@ -35,7 +36,8 @@ public class InputModule : MonoBehaviour
     {
         if (IsActive)
         {
-            MouseExecute();
+            if (!itemplace.activeInHierarchy)
+                MouseExecute();
         }
     }
     private void MouseExecute()

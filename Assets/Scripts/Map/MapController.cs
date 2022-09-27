@@ -46,7 +46,6 @@ public class MapController : Controller
         float nearestDistance = .5f;
         foreach (PlacementPoint point in placementPoints)
         {
-            print(point.name + " " + point.State);
             if (point.State == PlacementPointState.Empty)
             {
                 float dist = Vector2.Distance(point.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));

@@ -7,7 +7,6 @@ public class PlayerController : Controller
     #region Fields
     [SerializeField] private InputModule inputModule;
     [SerializeField] private GridModule gridModule;
-    [SerializeField] private GameObject itemplace;
     private GameObject currentObj;
     private Building building;
     #endregion
@@ -34,12 +33,9 @@ public class PlayerController : Controller
     #region Input
     public void OnClicked(GameObject obj, Vector2 pos)
     {
-        if (!itemplace.activeInHierarchy)
-        {
-            currentObj = obj;
-            building = currentObj.GetComponent<Building>();
-            building.OnClick();
-        }
+        currentObj = obj;
+        building = currentObj.GetComponent<Building>();
+        building.OnClick();
     }
     public void OnDragged(Vector2 pos)
     {

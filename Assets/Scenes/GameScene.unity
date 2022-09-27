@@ -852,7 +852,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputModule: {fileID: 953509469}
   gridModule: {fileID: 978519668}
-  itemplace: {fileID: 555404792034652630}
 --- !u!1 &135513492
 GameObject:
   m_ObjectHideFlags: 0
@@ -4366,6 +4365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dfa531fc401b6e44874e34fa86c2e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemplace: {fileID: 555404792034652630}
   layer:
     serializedVersion: 2
     m_Bits: 64
