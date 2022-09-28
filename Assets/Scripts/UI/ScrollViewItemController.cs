@@ -31,6 +31,7 @@ public class ScrollViewItemController : Controller
     }
     #endregion
 
+    #region Executes
     public void SetItems()
     {
         createItem(buildingCount, StructureType.Building);
@@ -58,11 +59,15 @@ public class ScrollViewItemController : Controller
                 case StructureType.Barrack:
                     obj.Type = StructureType.Barrack;
                     obj.Image.sprite = gameplayData.Barracks[i];
+                    int randomSoldier = Random.Range(0, gameplayData.Soldiers.Count);
+                    obj.SoldierSprite = gameplayData.Soldiers[randomSoldier];
+                    obj.SoldierName = "Soldier " + (randomSoldier+1);
                     break;
             }
+            obj.StructureName = obj.Type + " " + (i + 1);
             obj.SetActive();
             items.Add(obj.transform);
         }
     }
-
+    #endregion
 }

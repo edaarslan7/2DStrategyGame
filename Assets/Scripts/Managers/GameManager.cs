@@ -78,10 +78,9 @@ public class GameManager : MonoBehaviour
         gameCoordinator.GameOver();
         uiManager.ChangeScreen(ScreenTags.GameEndScreen);
     }
-    #endregion
-
     public void OnGameLoaded()
     {
         ChangeGameState(GameStates.GamePlay);
     }
+    #endregion
 }

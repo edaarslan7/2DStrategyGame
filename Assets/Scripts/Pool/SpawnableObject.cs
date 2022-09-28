@@ -9,13 +9,8 @@ public class SpawnableObject : MonoBehaviour
     #region Fields
     private Transform defaultParent;
     private bool isInUse;
-    protected StructureType type;
     protected GameplayData data;
     protected InformationController information;
-    #endregion
-
-    #region Props
-    public StructureType Type { get { return type; } set { type = value; } }
     #endregion
 
     #region Getters

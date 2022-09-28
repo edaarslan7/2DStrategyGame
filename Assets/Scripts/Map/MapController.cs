@@ -12,6 +12,7 @@ public class MapController : Controller
     [SerializeField] private List<PlacementPoint> placementPoints;
     [SerializeField] private ObjectPool buildingPool;
     [SerializeField] private float distThreshold = 1f;
+    [SerializeField] private SoldierSpawnHelper spawnHelper;
     private Building building;
     #endregion
 
@@ -59,42 +60,17 @@ public class MapController : Controller
         return nearestPoint;
     }
 
-    public void SpawnBuilding(StructureType type, Sprite itemImage, PlacementPoint point)
+    public void SpawnBuilding(StructureType type, Sprite itemImage, PlacementPoint point, string itemName, Sprite soldierSprite, string soldierName)
     {
-        bool a = point.State == PlacementPointState.Empty;
-        //print(a + " " + point.State + " " + point);
         if (point.State == PlacementPointState.Empty)
         {
             point.SetState(PlacementPointState.Full);
             building = buildingPool.GetItem() as Building;
-            building.SetBuildingData(itemImage, type);
+            building.SetBuildingData(itemImage, type, itemName);
+            building.SetSoldierData(soldierSprite, soldierName);
             building.SetActiveWithPosition(point.transform.position);
-        }
-        else
-        {
+            if (building.SpawnPoint != null) spawnHelper.Initialize(building.SpawnPoint);
         }
     }
     #endregion
-
-
-
-
-    //public Building SpawnBuilding(StructureType type, Sprite itemImage)
-    //{
-    //    bool any = placementPoints.Any(x => x.State == GameEnums.PlacementPointState.Empty);
-    //    if (any)
-    //    {
-    //        PlacementPoint emptyZone = placementPoints.First(x => x.State == GameEnums.PlacementPointState.Empty);
-    //        Building building = buildingPool.GetItem() as Building;
-    //        building.SetBuildingData(itemImage, type);
-    //        building.SetActiveWithPosition(emptyZone.transform.position);
-    //        emptyZone.SetState(GameEnums.PlacementPointState.Full);
-
-    //        return building;
-    //    }
-    //    else
-    //    {
-    //        return null;
-    //    }
-    //}
 }

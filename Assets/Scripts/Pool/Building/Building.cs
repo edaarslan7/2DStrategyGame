@@ -11,12 +11,21 @@ public class Building : SpawnableObject
     [Header("Modules")]
     [SerializeField] private PlacementModule placementModule;
     private List<PlacementPoint> placementPoints;
+    [Header("Building Data")]
+    protected StructureType type;
+    private string itemName;
+    [Header("Barracks Settings")]
+    [SerializeField] private Transform soldierSpawnPoint;
+    private Transform spawnPoint;
+    private Sprite soldierSprite;
+    private string soldierName;
     #endregion
 
     #region Getters
     public PlacementModule PlacementModule => placementModule;
     public List<PlacementPoint> PlacementPoints => placementPoints;
     public BuildingBody BuildingBody => body;
+    public Transform SpawnPoint => spawnPoint;
     #endregion
 
     #region Core
@@ -27,6 +36,8 @@ public class Building : SpawnableObject
     public override void SetActiveWithPosition(Vector2 pos)
     {
         base.SetActiveWithPosition(pos);
+        if (soldierSpawnPoint.gameObject.activeInHierarchy) spawnPoint = soldierSpawnPoint;
+        else spawnPoint = null;
         body.ResetColor();
         placementPoints = new List<PlacementPoint>();
         placementModule.Initialize(this, body);
@@ -37,12 +48,18 @@ public class Building : SpawnableObject
         base.Dismiss();
         placementModule.CanPlace = false;
     }
-    public void SetBuildingData(Sprite image, StructureType type)
+    public void SetBuildingData(Sprite image, StructureType type, string itemName)
     {
         this.type = type;
         body.Initialize(data, type);
         body.MainRenderer.sprite = image;
+        this.itemName = itemName;
+    }
 
+    public void SetSoldierData(Sprite soldierSprite, string soldierName)
+    {
+        this.soldierSprite = soldierSprite;
+        this.soldierName = soldierName;
     }
     #endregion
 
@@ -141,7 +158,8 @@ public class Building : SpawnableObject
     public override void OnItemClick()
     {
         base.OnItemClick();
-        information.SetInformationData(type.ToString(), body.MainRenderer.sprite, type, false); ;
+        information.SetInformationData(itemName, body.MainRenderer.sprite, type, false);
+        information.SetSoldierData(soldierSprite, soldierName);
     }
     #endregion
 }

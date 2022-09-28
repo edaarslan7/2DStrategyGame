@@ -12,9 +12,10 @@ public class InformationController : Controller
     [SerializeField] private Text itemName;
     [SerializeField] private Image itemImage;
     [SerializeField] private Image soldierImage;
+    [SerializeField] private Text soldierName;
     [SerializeField] private GameObject product;
     [SerializeField] private GameObject structure;
-    [Space]
+    [Header("Controllers/Helpers")]
     [SerializeField] private MapController mapController;
     [SerializeField] private InfiniteScroll scroll;
     [SerializeField] private ItemPlaceHelper itemPlaceHelper;
@@ -35,15 +36,13 @@ public class InformationController : Controller
     public override void GameOver()
     {
     }
-
     #endregion
 
+    #region Executes
     public void SetScrollViewItem(ScrollViewItem item)
     {
         this.item = item;
     }
-
-    #region Executes
     public void SetInformationData(string name, Sprite image, StructureType type, bool buttonInteractable)
     {
         this.buttonInteractable = buttonInteractable;
@@ -63,12 +62,19 @@ public class InformationController : Controller
         }
     }
 
+    public void SetSoldierData(Sprite soldier, string soldierName)
+    {
+        soldierImage.sprite = soldier;
+        this.soldierName.text = soldierName;
+    }
+
     public void OnClick(Building building)
     {
         if (buttonInteractable)
         {
             //Building building = mapController.SpawnBuilding(structureType, itemImage.sprite);
-            itemPlaceHelper.SetItemData(itemImage.sprite, structureType);
+            itemPlaceHelper.SetItemData(itemImage.sprite, structureType, itemName.text);
+            itemPlaceHelper.SetSoldierData(soldierImage.sprite, soldierName.text);
             itemPlaceHelper.SetModel(true);
         }
     }

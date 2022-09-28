@@ -5,9 +5,12 @@ using UnityEngine.Events;
 
 public class LoadingScreen : GameScreen
 {
+    #region Fields
     private const float loadingTime = 2f;
     [SerializeField] private UnityEvent onLoaded;
+    #endregion
 
+    #region Core
     public override void Show()
     {
         base.Show();
@@ -20,4 +23,5 @@ public class LoadingScreen : GameScreen
         onLoaded?.Invoke();
         Hide();
     }
+    #endregion
 }

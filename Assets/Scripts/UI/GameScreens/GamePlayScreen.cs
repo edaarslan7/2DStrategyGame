@@ -19,9 +19,4 @@ public class GamePlayScreen : GameScreen
         scrollItemController.SetItems();
     }
     #endregion
-
-    private void setItems()
-    {
-
-    }
 }
