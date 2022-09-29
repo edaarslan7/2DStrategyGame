@@ -15,6 +15,7 @@ public class InformationController : Controller
     [SerializeField] private Text soldierName;
     [SerializeField] private GameObject product;
     [SerializeField] private GameObject structure;
+    [SerializeField] private Button soldierButton;
     [Header("Controllers/Helpers")]
     [SerializeField] private MapController mapController;
     [SerializeField] private InfiniteScroll scroll;
@@ -46,6 +47,7 @@ public class InformationController : Controller
     public void SetInformationData(string name, Sprite image, StructureType type, bool buttonInteractable)
     {
         this.buttonInteractable = buttonInteractable;
+        soldierButton.interactable = !buttonInteractable;
         if (!structure.activeInHierarchy) structure.SetActive(true);
         itemName.text = name;
         itemImage.sprite = image;
@@ -72,7 +74,6 @@ public class InformationController : Controller
     {
         if (buttonInteractable)
         {
-            //Building building = mapController.SpawnBuilding(structureType, itemImage.sprite);
             itemPlaceHelper.SetItemData(itemImage.sprite, structureType, itemName.text);
             itemPlaceHelper.SetSoldierData(soldierImage.sprite, soldierName.text);
             itemPlaceHelper.SetModel(true);

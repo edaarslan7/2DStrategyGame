@@ -27,7 +27,7 @@ public class ItemPlaceHelper : MonoBehaviour
     }
     #endregion
 
-    #region Updates
+    #region Update
     private void Update()
     {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

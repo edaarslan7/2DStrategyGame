@@ -8,12 +8,14 @@ public class Building : SpawnableObject
     #region Fields
     [Header("Components")]
     [SerializeField] private BuildingBody body;
+    
     [Header("Modules")]
     [SerializeField] private PlacementModule placementModule;
     private List<PlacementPoint> placementPoints;
-    [Header("Building Data")]
-    protected StructureType type;
+    
+    private StructureType type;
     private string itemName;
+    
     [Header("Barracks Settings")]
     [SerializeField] private Transform soldierSpawnPoint;
     private Transform spawnPoint;
