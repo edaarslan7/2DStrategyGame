@@ -55,14 +55,23 @@ public class PlacementModule : MonoBehaviour
         if (building.PlacementPoints.Count > 0)
         {
             if (building.PlacementPoints.All(x => x.State == GameEnums.PlacementPointState.Empty))
-                CanPlace = true;
+            {
+                if (building.PlacementPoints.Count == building.PointsCount)
+                {
+                    canPlace = true;
+                }
+                else
+                {
+                    canPlace = false;
+                }
+            }
             else
-                CanPlace = false;
+                canPlace = false;
         }
         else
-             CanPlace = false;
+            canPlace = false;
 
-        body.ColorChangings(CanPlace);
+        body.ColorChangings(canPlace);
     }
     #endregion
 }

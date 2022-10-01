@@ -27,8 +27,10 @@ public class SoldierUnit : SpawnableObject
     }
     #endregion
 
+    #region Executes
     public void Movement(Vector2 pos)
     {
         agent.SetDestination(pos);
     }
+    #endregion
 }

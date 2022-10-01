@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
+  model: {fileID: 7362097360167244518}
 --- !u!61 &4084249891534607931
 BoxCollider2D:
   m_ObjectHideFlags: 0

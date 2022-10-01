@@ -23,7 +23,7 @@ public class SoldierSpawnHelper : MonoBehaviour
 	{
 		SoldierUnit soldier = soldierPool.GetItem() as SoldierUnit;
 		soldier.SetSprite(soldierImage.sprite);
-		soldier.SetActiveWithPosition(spawnPoint.position);
+		soldier.SetActiveWithPosition(spawnPoint.position + new Vector3(Random.Range(0, 0.5f), Random.Range(0, 0.5f), 1));
 	}
 	#endregion
 

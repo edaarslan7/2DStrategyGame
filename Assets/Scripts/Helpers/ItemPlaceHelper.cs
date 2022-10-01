@@ -66,5 +66,9 @@ public class ItemPlaceHelper : MonoBehaviour
         Cursor.visible = !value;
         canPlace = value;
     }
+    public void SetScale(Vector2 scale)
+    {
+        model.transform.localScale = scale;
+    }
     #endregion
 }

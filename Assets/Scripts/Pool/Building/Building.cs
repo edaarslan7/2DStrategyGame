@@ -8,14 +8,15 @@ public class Building : SpawnableObject
     #region Fields
     [Header("Components")]
     [SerializeField] private BuildingBody body;
-    
+
     [Header("Modules")]
     [SerializeField] private PlacementModule placementModule;
     private List<PlacementPoint> placementPoints;
-    
+    private int pointsCount;
+
     private StructureType type;
     private string itemName;
-    
+
     [Header("Barracks Settings")]
     [SerializeField] private Transform soldierSpawnPoint;
     private Transform spawnPoint;
@@ -28,6 +29,7 @@ public class Building : SpawnableObject
     public List<PlacementPoint> PlacementPoints => placementPoints;
     public BuildingBody BuildingBody => body;
     public Transform SpawnPoint => spawnPoint;
+    public int PointsCount => pointsCount;
     #endregion
 
     #region Core
@@ -56,6 +58,8 @@ public class Building : SpawnableObject
         body.Initialize(data, type);
         body.MainRenderer.sprite = image;
         this.itemName = itemName;
+        Vector2 scale = data.Scales[(int)type];
+        pointsCount = (int)(scale.x * scale.y);
     }
 
     public void SetSoldierData(Sprite soldierSprite, string soldierName)
@@ -99,14 +103,19 @@ public class Building : SpawnableObject
     private void addNewPlacementPoint(PlacementPoint point)
     {
         if (!placementPoints.Contains(point))
+        {
             placementPoints.Add(point);
+        }
 
         placementModule.UpdateCanPlace();
     }
     private void removePlacementPoint(PlacementPoint point)
     {
         if (placementPoints.Contains(point))
+        {
             placementPoints.Remove(point);
+            point.SetState(PlacementPointState.Empty);
+        }
 
         placementModule.UpdateCanPlace();
     }
@@ -119,13 +128,12 @@ public class Building : SpawnableObject
                 PlacementPoint point = placementPoints[i].GetComponent<PlacementPoint>();
                 if (isEmpty)
                 {
-
-                    point.SetState(GameEnums.PlacementPointState.Empty);
+                    point.SetState(PlacementPointState.Empty);
                     placementModule.IsPlaced = false;
                 }
                 else
                 {
-                    point.SetState(GameEnums.PlacementPointState.Full);
+                    point.SetState(PlacementPointState.Full);
                     placementModule.IsPlaced = true;
                 }
             }
@@ -152,6 +160,7 @@ public class Building : SpawnableObject
         if (other.gameObject.CompareTag(CONSTANTS.placementPointTag))
         {
             removePlacementPoint(other.GetComponent<PlacementPoint>());
+
         }
     }
     #endregion

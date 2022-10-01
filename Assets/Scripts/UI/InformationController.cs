@@ -23,11 +23,13 @@ public class InformationController : Controller
     private StructureType structureType;
     private ScrollViewItem item;
     private bool buttonInteractable;
+    private GameplayData gameplayData;
     #endregion
 
     #region Core
     public override void Initialize(GameplayData data)
     {
+        gameplayData = data;
         itemPlaceHelper.Initialize();
     }
 
@@ -70,13 +72,14 @@ public class InformationController : Controller
         this.soldierName.text = soldierName;
     }
 
-    public void OnClick(Building building)
+    public void OnClick()
     {
         if (buttonInteractable)
         {
             itemPlaceHelper.SetItemData(itemImage.sprite, structureType, itemName.text);
             itemPlaceHelper.SetSoldierData(soldierImage.sprite, soldierName.text);
             itemPlaceHelper.SetModel(true);
+            itemPlaceHelper.SetScale(gameplayData.Scales[(int)structureType]);
         }
     }
     #endregion

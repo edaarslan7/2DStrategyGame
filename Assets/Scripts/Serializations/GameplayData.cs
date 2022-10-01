@@ -16,6 +16,9 @@ public class GameplayData : ScriptableObject
     [SerializeField] private List<Sprite> powerPlants;
     [SerializeField] private List<Sprite> barracks;
     [SerializeField] private List<Sprite> soldiers;
+
+    [Header("Building Data")]
+    [SerializeField] private List<Vector2> scales;
     #endregion
 
     #region Getters
@@ -25,5 +28,6 @@ public class GameplayData : ScriptableObject
     public List<Sprite> PowerPlants => powerPlants;
     public List<Sprite> Barracks => barracks;
     public List<Sprite> Soldiers => soldiers;
+    public List<Vector2> Scales => scales;
     #endregion
 }
