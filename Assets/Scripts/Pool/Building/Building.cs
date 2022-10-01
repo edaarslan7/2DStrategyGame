@@ -103,19 +103,14 @@ public class Building : SpawnableObject
     private void addNewPlacementPoint(PlacementPoint point)
     {
         if (!placementPoints.Contains(point))
-        {
             placementPoints.Add(point);
-        }
 
         placementModule.UpdateCanPlace();
     }
     private void removePlacementPoint(PlacementPoint point)
     {
         if (placementPoints.Contains(point))
-        {
             placementPoints.Remove(point);
-            point.SetState(PlacementPointState.Empty);
-        }
 
         placementModule.UpdateCanPlace();
     }

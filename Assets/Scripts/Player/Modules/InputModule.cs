@@ -15,6 +15,7 @@ public class InputModule : MonoBehaviour
     [SerializeField] private LayerMask buildingLayer;
     [SerializeField] private LayerMask soldierLayer;
     [SerializeField] private float dragThreshold = 1f;
+    [SerializeField] private ItemPlaceHelper itemPlaceHelper;
     private Vector2 currentPos;
     private Vector2 clickPos;
     private GameObject building;
@@ -91,7 +92,10 @@ public class InputModule : MonoBehaviour
         {
             clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (soldierUnit != null)
+            {
+                itemPlaceHelper.ClickAnim(clickPos);
                 OnSoldierMovement?.Invoke(clickPos);
+            }
         }
         //else
         //{

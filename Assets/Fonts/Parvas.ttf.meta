@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: af29fb407374d6441a847d963fb7e155
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Parvas
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: c6a4422ce9956ca418a5278705799423, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

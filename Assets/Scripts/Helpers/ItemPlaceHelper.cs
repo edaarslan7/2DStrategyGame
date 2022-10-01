@@ -11,7 +11,7 @@ public class ItemPlaceHelper : MonoBehaviour
     [SerializeField] private GameObject model;
     [SerializeField] private SpriteRenderer itemRenderer;
     [SerializeField] private MapController mapController;
-    [SerializeField] private Transform returnPoint;
+    [SerializeField] private ItemPlaceAnim anim;
     private string itemName;
     private string soldierName;
     private Sprite soldierSprite;
@@ -57,7 +57,7 @@ public class ItemPlaceHelper : MonoBehaviour
     public void SetSoldierData(Sprite soldierSprite, string soldierName)
     {
         this.soldierSprite = soldierSprite;
-        this.soldierName= soldierName;
+        this.soldierName = soldierName;
     }
 
     public void SetModel(bool value)
@@ -69,6 +69,12 @@ public class ItemPlaceHelper : MonoBehaviour
     public void SetScale(Vector2 scale)
     {
         model.transform.localScale = scale;
+    }
+    public void ClickAnim(Vector2 pos)
+    {
+        SetScale(Vector2.one);
+        anim.gameObject.SetActive(true);
+        anim.ClickAnim(pos);
     }
     #endregion
 }
